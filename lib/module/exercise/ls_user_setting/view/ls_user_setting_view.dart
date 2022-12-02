@@ -54,6 +54,51 @@ class LsUserSettingView extends StatefulWidget {
               Jika perubahan yang kamu lakukan tidak mempengarungi
               Switch yang lainnya, maka task ini selesai!
               */
+              SwitchListTile(
+                value: mainStorage.get("Dark_mode") ?? true,
+                title: const Text("Dark mode"),
+                onChanged: (value) {
+                  var current = mainStorage.get("Dark_mode") ?? true;
+                  mainStorage.put("Dark_mode", !current);
+                  controller.setState(() {});
+                },
+              ),
+              SwitchListTile(
+                value: mainStorage.get("Admin") ?? false,
+                title: const Text("Admin"),
+                onChanged: (value) {
+                  var current = mainStorage.get("Admin") ?? false;
+                  mainStorage.put("Admin", !current);
+                  controller.setState(() {});
+                },
+              ),
+              SwitchListTile(
+                value: mainStorage.get("Experimental") ?? true,
+                title: const Text("Experimental"),
+                onChanged: (value) {
+                  var current = mainStorage.get("Experimental") ?? true;
+                  mainStorage.put("Experimental", !current);
+                  controller.setState(() {});
+                },
+              ),
+              SwitchListTile(
+                value: mainStorage.get("Offline") ?? false,
+                title: const Text("Offline"),
+                onChanged: (value) {
+                  var current = mainStorage.get("Offline") ?? false;
+                  mainStorage.put("Offline", !current);
+                  controller.setState(() {});
+                },
+              ),
+              SwitchListTile(
+                value: mainStorage.get("Cache") ?? true,
+                title: const Text("Cache"),
+                onChanged: (value) {
+                  var current = mainStorage.get("Cache") ?? true;
+                  mainStorage.put("Cache", !current);
+                  controller.setState(() {});
+                },
+              ),
             ],
           ),
         ),

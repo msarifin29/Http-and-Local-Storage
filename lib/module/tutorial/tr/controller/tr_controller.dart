@@ -17,274 +17,274 @@ class TrController extends State<TrView> implements MvcController {
   @override
   Widget build(BuildContext context) => widget.build(context, this);
 
-  List ficStateManagementList = [
-    {
-      "label": "Counter",
-      "view": const FicCounterView(),
-    },
-    {
-      "label": "Loading",
-      "view": const FicLoadingView(),
-    },
-    {
-      "label": "Enabled or Disabled",
-      "view": const FicEnableOrDisabledView(),
-    },
-    {
-      "label": "Visiblity",
-      "view": const FicVisibilityView(),
-    },
-    {
-      "label": "Animation",
-      "view": const FicAnimationView(),
-    },
-    {
-      "label": "Navigation",
-      "view": const FicNavigationView(),
-    },
-    {
-      "label": "Cart",
-      "view": const FicCartView(),
-    },
-    {
-      "label": "Filter List",
-      "view": const FicFilterListView(),
-    },
-    {
-      "label": "Theme",
-      "view": const FicThemeView(),
-    },
-  ];
+  // List ficStateManagementList = [
+  // {
+  //   "label": "Counter",
+  //   "view": const FicCounterView(),
+  // },
+  // {
+  //   "label": "Loading",
+  //   "view": const FicLoadingView(),
+  // },
+  // {
+  //   "label": "Enabled or Disabled",
+  //   "view": const FicEnableOrDisabledView(),
+  // },
+  // {
+  //   "label": "Visiblity",
+  //   "view": const FicVisibilityView(),
+  // },
+  // {
+  //   "label": "Animation",
+  //   "view": const FicAnimationView(),
+  // },
+  // {
+  //   "label": "Navigation",
+  //   "view": const FicNavigationView(),
+  // },
+  // {
+  //   "label": "Cart",
+  //   "view": const FicCartView(),
+  // },
+  // {
+  //   "label": "Filter List",
+  //   "view": const FicFilterListView(),
+  // },
+  // {
+  //   "label": "Theme",
+  //   "view": const FicThemeView(),
+  // },
+  // ];
 
-  List items = [
-    {
-      "label": "Counter",
-      "view": const TrsmCounterView(),
-    },
-    {
-      "label": "Loading",
-      "view": const TrsmLoadingView(),
-    },
-    {
-      "label": "Visibility",
-      "view": const TrsmVisibilityView(),
-    },
-    {
-      "label": "Enabled/Disabled",
-      "view": const TrsmEnabledAndDisabledView(),
-    },
-    {
-      "label": "Cart",
-      "view": const TrsmCartView(),
-    },
-    {
-      "label": "Add & Delete",
-      "view": const TrsmAddAndDeleteFromListView(),
-    },
-    {
-      "label": "Loading for HTTP Request",
-      "view": const TrsmLoadingForHttpRequestView(),
-    },
-    {
-      "label": "Animation",
-      "view": const TrsmAnimationView(),
-    },
-    {
-      "label": "Animation by Mouse Event",
-      "view": const TrsmAnimationByMouseEventView(),
-    },
-    {
-      "label": "Slide Animation",
-      "view": const TrsmSlideAnimationView(),
-    },
-    {
-      "label": "Fade Animation",
-      "view": const TrsmFadeAnimationView(),
-    },
-    {
-      "label": "Scale Animation",
-      "view": const TrsmScaleAnimationView(),
-    },
-    {
-      "label": "Scale Animation by Slide Value",
-      "view": const TrsmScaleAnimationBySlideValueView(),
-    },
-    {
-      "label": "Rotate Animation",
-      "view": const TrsmRotateAnimationView(),
-    },
-    // {
-    //   "label": "Fade In Animation",
-    //   "view": const TrsmFadeInAnimationView(),
-    // },
-    // {
-    //   "label": "Fade Out Animation",
-    //   "view": const TrsmFadeOutAnimationView(),
-    // },
-    // {
-    //   "label": "Scale In Animation",
-    //   "view": const TrsmScaleInAnimationView(),
-    // },
-    // {
-    //   "label": "Scale Out Animation",
-    //   "view": const TrsmScaleOutAnimationView(),
-    // },
-    {
-      "label": "Digital Clock",
-      "view": const TrsmDigitalClockView(),
-    },
-    {
-      "label": "Horizontal List",
-      "view": const TrsmHorizontalCategoryListView(),
-    },
-    {
-      "label": "Vertical Category List",
-      "view": const TrsmVerticalCategoryListView(),
-    },
-    {
-      "label": "Category in Wrap",
-      "view": const TrsmCategoryInWrapView(),
-    },
-    {
-      "label": "Filter List",
-      "view": const TrsmFilterListView(),
-    },
-    {
-      "label": "Chat List",
-      "view": const TrsmChatListView(),
-    },
-    {
-      "label": "Navigation",
-      "view": const TrsmNavigationView(),
-    },
-    {
-      "label": "CRUD",
-      "view": const TrsmCrudView(),
-    },
-    {
-      "label": "Repeat Animation",
-      "view": const LtsmRepeatAnimationView(),
-    },
-    {
-      "label": "Navigation with Slide Animation",
-      "view": const LtsmNavigationWithSlideAnimationView(),
-    },
-    {
-      "label": "Scroll",
-      "view": const LtsmScrollView(),
-    },
-    {
-      "label": "Theme",
-      "view": const LtsmThemeView(),
-    },
-  ];
+  // List items = [
+  // {
+  //   "label": "Counter",
+  //   "view": const TrsmCounterView(),
+  // },
+  // {
+  //   "label": "Loading",
+  //   "view": const TrsmLoadingView(),
+  // },
+  // {
+  //   "label": "Visibility",
+  //   "view": const TrsmVisibilityView(),
+  // },
+  // {
+  //   "label": "Enabled/Disabled",
+  //   "view": const TrsmEnabledAndDisabledView(),
+  // },
+  // {
+  //   "label": "Cart",
+  //   "view": const TrsmCartView(),
+  // },
+  // {
+  //   "label": "Add & Delete",
+  //   "view": const TrsmAddAndDeleteFromListView(),
+  // },
+  // {
+  //   "label": "Loading for HTTP Request",
+  //   "view": const TrsmLoadingForHttpRequestView(),
+  // },
+  // {
+  //   "label": "Animation",
+  //   "view": const TrsmAnimationView(),
+  // },
+  // {
+  //   "label": "Animation by Mouse Event",
+  //   "view": const TrsmAnimationByMouseEventView(),
+  // },
+  // {
+  //   "label": "Slide Animation",
+  //   "view": const TrsmSlideAnimationView(),
+  // },
+  // {
+  //   "label": "Fade Animation",
+  //   "view": const TrsmFadeAnimationView(),
+  // },
+  // {
+  //   "label": "Scale Animation",
+  //   "view": const TrsmScaleAnimationView(),
+  // },
+  // {
+  //   "label": "Scale Animation by Slide Value",
+  //   "view": const TrsmScaleAnimationBySlideValueView(),
+  // },
+  // {
+  //   "label": "Rotate Animation",
+  //   "view": const TrsmRotateAnimationView(),
+  // },
+  // {
+  //   "label": "Fade In Animation",
+  //   "view": const TrsmFadeInAnimationView(),
+  // },
+  // {
+  //   "label": "Fade Out Animation",
+  //   "view": const TrsmFadeOutAnimationView(),
+  // },
+  // {
+  //   "label": "Scale In Animation",
+  //   "view": const TrsmScaleInAnimationView(),
+  // },
+  // {
+  //   "label": "Scale Out Animation",
+  //   "view": const TrsmScaleOutAnimationView(),
+  // },
+  // {
+  //   "label": "Digital Clock",
+  //   "view": const TrsmDigitalClockView(),
+  // },
+  // {
+  //   "label": "Horizontal List",
+  //   "view": const TrsmHorizontalCategoryListView(),
+  // },
+  // {
+  //   "label": "Vertical Category List",
+  //   "view": const TrsmVerticalCategoryListView(),
+  // },
+  // {
+  //   "label": "Category in Wrap",
+  //   "view": const TrsmCategoryInWrapView(),
+  // },
+  // {
+  //   "label": "Filter List",
+  //   "view": const TrsmFilterListView(),
+  // },
+  // {
+  //   "label": "Chat List",
+  //   "view": const TrsmChatListView(),
+  // },
+  // {
+  //   "label": "Navigation",
+  //   "view": const TrsmNavigationView(),
+  // },
+  // {
+  //   "label": "CRUD",
+  //   "view": const TrsmCrudView(),
+  // },
+  // {
+  //   "label": "Repeat Animation",
+  //   "view": const LtsmRepeatAnimationView(),
+  // },
+  // {
+  //   "label": "Navigation with Slide Animation",
+  //   "view": const LtsmNavigationWithSlideAnimationView(),
+  // },
+  // {
+  //   "label": "Scroll",
+  //   "view": const LtsmScrollView(),
+  // },
+  // {
+  //   "label": "Theme",
+  //   "view": const LtsmThemeView(),
+  // },
+  // ];
 
-  List formItems = [
-    {
-      "label": "Login",
-      "view": const TrfmLoginFormView(),
-    },
-    {
-      "label": "Signup",
-      "view": const TrfmSignupFormView(),
-    },
-    {
-      "label": "Forgot Password",
-      "view": const TrfmForgotPasswordFormView(),
-    },
-    {
-      "label": "Reset Password",
-      "view": const TrfmResetPasswordFormView(),
-    },
-    {
-      "label": "Edit Profile",
-      "view": const TrfmEditProfileFormView(),
-    },
-    {
-      "label": "Product Form",
-      "view": const TrfmProductFormView(),
-    },
-    {
-      "label": "Edit Store Form",
-      "view": const TrfmEditStoreFormView(),
-    },
-    {
-      "label": "Checkout Form",
-      "view": const TrfmCheckoutFormView(),
-    },
-    {
-      "label": "Review Form",
-      "view": const TrfmReviewFormView(),
-    },
-    {
-      "label": "Filter Date Dialog",
-      "view": const TrfmFilterDateDialogFormView(),
-    },
-    {
-      "label": "Filter Category & Date Bottomsheet",
-      "view": const TrfmFilterCategoryAndDateBottomsheetFormView(),
-    },
-  ];
+  // List formItems = [
+  // {
+  //   "label": "Login",
+  //   "view": const TrfmLoginFormView(),
+  // },
+  // {
+  //   "label": "Signup",
+  //   "view": const TrfmSignupFormView(),
+  // },
+  // {
+  //   "label": "Forgot Password",
+  //   "view": const TrfmForgotPasswordFormView(),
+  // },
+  // {
+  //   "label": "Reset Password",
+  //   "view": const TrfmResetPasswordFormView(),
+  // },
+  // {
+  //   "label": "Edit Profile",
+  //   "view": const TrfmEditProfileFormView(),
+  // },
+  // {
+  //   "label": "Product Form",
+  //   "view": const TrfmProductFormView(),
+  // },
+  // {
+  //   "label": "Edit Store Form",
+  //   "view": const TrfmEditStoreFormView(),
+  // },
+  // {
+  //   "label": "Checkout Form",
+  //   "view": const TrfmCheckoutFormView(),
+  // },
+  // {
+  //   "label": "Review Form",
+  //   "view": const TrfmReviewFormView(),
+  // },
+  // {
+  //   "label": "Filter Date Dialog",
+  //   "view": const TrfmFilterDateDialogFormView(),
+  // },
+  // {
+  //   "label": "Filter Category & Date Bottomsheet",
+  //   "view": const TrfmFilterCategoryAndDateBottomsheetFormView(),
+  // },
+  // ];
 
-  List httpRequestItems = [
-    {
-      "label": "Login",
-      "view": const HttpLoginView(),
-    },
-    {
-      "label": "Product CRUD",
-      "view": const HttpProductListView(),
-    },
-  ];
+  // List httpRequestItems = [
+  // {
+  //   "label": "Login",
+  //   "view": const HttpLoginView(),
+  // },
+  // {
+  //   "label": "Product CRUD",
+  //   "view": const HttpProductListView(),
+  // },
+  // ];
 
-  List firebaseExampleItems = [
-    {
-      "label": "Login",
-      "view": const TfLoginView(),
-    },
-    {
-      "label": "Register",
-      "view": const TfRegisterView(),
-    },
-    {
-      "label": "Product List",
-      "view": const TfProductListView(),
-    },
-    {
-      "label": "Product Form",
-      "view": const TfProductFormView(),
-    },
-  ];
+  // List firebaseExampleItems = [
+  // {
+  //   "label": "Login",
+  //   "view": const TfLoginView(),
+  // },
+  // {
+  //   "label": "Register",
+  //   "view": const TfRegisterView(),
+  // },
+  // {
+  //   "label": "Product List",
+  //   "view": const TfProductListView(),
+  // },
+  // {
+  //   "label": "Product Form",
+  //   "view": const TfProductFormView(),
+  // },
+  // ];
 
-  List uiExampleItems = [
-    {
-      "label": "Tiktok",
-      "view": const TkMainNavigationView(),
-    },
-    {
-      "label": "OVO",
-      "view": const OvoDashboardView(),
-    },
-  ];
+  // List uiExampleItems = [
+  //   {
+  //     "label": "Tiktok",
+  //     "view": const TkMainNavigationView(),
+  //   },
+  //   {
+  //     "label": "OVO",
+  //     "view": const OvoDashboardView(),
+  //   },
+  // ];
 
-  List localStorageItems = [
-    {
-      "label": "Login",
-      "view": const LsLoginView(),
-    },
-    {
-      "label": "Theme",
-      "view": const LsThemeView(),
-    },
-    {
-      "label": "Product CRUD",
-      "view": const LsProductListView(),
-    },
-    {
-      "label": "Form History",
-      "view": const LsFormHistoryView(),
-    },
-  ];
+  // List localStorageItems = [
+  //   {
+  //     "label": "Login",
+  //     "view": const LsLoginView(),
+  //   },
+  //   {
+  //     "label": "Theme",
+  //     "view": const LsThemeView(),
+  //   },
+  //   {
+  //     "label": "Product CRUD",
+  //     "view": const LsProductListView(),
+  //   },
+  //   {
+  //     "label": "Form History",
+  //     "view": const LsFormHistoryView(),
+  //   },
+  // ];
 
   List stateManagementExerciseList = [
     {

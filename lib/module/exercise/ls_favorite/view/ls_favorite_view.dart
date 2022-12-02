@@ -38,6 +38,7 @@ class LsFavoriteView extends StatefulWidget {
                   itemBuilder: (context, index) {
                     var item = controller.productList[index];
                     if (item["favorite"] != true) return Container();
+
                     return Card(
                       clipBehavior: Clip.antiAlias,
                       child: SizedBox(
@@ -55,7 +56,7 @@ class LsFavoriteView extends StatefulWidget {
                                   ),
                                   fit: BoxFit.cover,
                                 ),
-                                color: Colors.blue[400],
+                                color: Colors.grey[400],
                               ),
                               child: Stack(
                                 children: [
@@ -271,7 +272,7 @@ class LsFavoriteView extends StatefulWidget {
                                         backgroundColor: Colors.white,
                                         child: Icon(
                                           Icons.favorite,
-                                          size: 12.0,
+                                          size: 16.0,
                                           color: item["favorite"] == true
                                               ? Colors.red
                                               : Colors.grey,

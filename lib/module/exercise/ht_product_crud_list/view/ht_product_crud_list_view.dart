@@ -107,6 +107,7 @@ class HtProductCrudListView extends StatefulWidget {
               child: ListView.builder(
                 itemCount: controller.productList.length,
                 itemBuilder: (context, index) {
+                  print(controller.productList[index]["price"]);
                   var item = controller.productList[index];
                   //
                   return InkWell(
@@ -126,6 +127,8 @@ class HtProductCrudListView extends StatefulWidget {
                       Buka HtProductCrudFormController:
                       lanjut ke point 27
                       */
+                      await Get.to(HtProductCrudFormView(item: item));
+                      controller.loadProducts();
                     },
                     child: Card(
                       child: ListTile(

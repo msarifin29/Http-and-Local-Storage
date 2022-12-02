@@ -1,6 +1,7 @@
 import 'package:faker_dart/faker_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:example/state_util.dart';
+import '../../../../service/db_service.dart';
 import '../../../../shared/util/dialog/show_info_dialog.dart';
 import '../view/ls_pos_with_table_selection_view.dart';
 
@@ -41,6 +42,9 @@ class LsPosWithTableSelectionController
     Jika belum tambahkan di ProductCRUD (tasks sebelumnya)
     Cukup tambahkan 5 saja
     */
+
+    productList = mainStorage.get("products") ?? [];
+    setState(() {});
   }
 
   increaseQty(item) {
@@ -52,6 +56,8 @@ class LsPosWithTableSelectionController
     setState(() {});
     ###
     */
+    item["qty"]++;
+    setState(() {});
   }
 
   decreaseQty(item) {
@@ -64,6 +70,9 @@ class LsPosWithTableSelectionController
     setState(() {});
     ###
     */
+    if (item["qty"] == 0) return;
+    item["qty"]--;
+    setState(() {});
   }
 
   double get total {
@@ -78,6 +87,10 @@ class LsPosWithTableSelectionController
     }
     ###
     */
+    for (var i = 0; i < productList.length; i++) {
+      var product = productList[i];
+      itemTotal += product["qty"] * product["price"];
+    }
     return itemTotal;
   }
 
@@ -122,6 +135,17 @@ class LsPosWithTableSelectionController
     Lalu klik checkout, jika alert Your Order is Complete muncul,
     Maka task kamu sudah selesai!
     */
+    Map order = {
+      "created_at": DateTime.now(),
+      "customer": "-",
+      "payment_method": "Cash",
+      "total": total,
+      "table": table,
+      "items": productList,
+    };
+    List orders = await mainStorage.get("orders") ?? [];
+    orders.add(order);
+    mainStorage.put("orders", orders);
 
     emptyCart();
     await showInfoDialog("Your order is complete!");

@@ -35,6 +35,9 @@ class LsProductCrudController extends State<LsProductCrudView>
 
     2. Panggil setState setelah-nya!
     */
+
+    productList = mainStorage.get("products") ?? [];
+    setState(() {});
   }
 
   addProduct(Map newProduct) async {
@@ -58,6 +61,10 @@ class LsProductCrudController extends State<LsProductCrudView>
 
     6. Selalu panggil function di atas, untuk menyimpannya ke storage. >_<
     */
+
+    productList.add(newProduct);
+    setState(() {});
+    saveproductList();
   }
 
   delete(item) {
@@ -72,6 +79,9 @@ class LsProductCrudController extends State<LsProductCrudView>
 
     9. Panggil function saveproductList();
     */
+    productList.remove(item);
+    setState(() {});
+    saveproductList();
   }
 
   edit(item) {
@@ -97,6 +107,10 @@ class LsProductCrudController extends State<LsProductCrudView>
     Apakah data yang kamu ubah masih muncul?
     Jika ya, task ini selesai! 
     */
+
+    item["product_name"] = faker.commerce.productName();
+    setState(() {});
+    saveproductList();
   }
 
   saveproductList() {

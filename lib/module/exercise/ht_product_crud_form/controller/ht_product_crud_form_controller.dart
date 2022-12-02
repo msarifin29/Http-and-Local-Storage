@@ -1,11 +1,16 @@
 import 'package:example/core.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../config.dart';
+
 class HtProductCrudFormController extends State<HtProductCrudFormView>
     implements MvcController {
   static late HtProductCrudFormController instance;
   late HtProductCrudFormView view;
-
+  String photo = "";
+  String productName = "";
+  double price = 0.0;
+  String description = "";
   @override
   void initState() {
     instance = this;
@@ -24,6 +29,12 @@ class HtProductCrudFormController extends State<HtProductCrudFormView>
 
     18. Kembali ke View, masuk ke point 19
     */
+    if (widget.item != null) {
+      photo = widget.item!["photo"];
+      productName = widget.item!["product_name"];
+      price = widget.item!["price"];
+      description = widget.item!["description"];
+    }
     super.initState();
   }
 
@@ -47,6 +58,11 @@ class HtProductCrudFormController extends State<HtProductCrudFormView>
   bool get isEditMode {
     return widget.item!=null;
   }
+  */
+  bool get isEditMode {
+    return widget.item != null;
+  }
+  /*
 
   28. Nice, tahap ini akan sedikit sulit
   Untuk kamu yang belum terbiasa~
@@ -61,6 +77,9 @@ class HtProductCrudFormController extends State<HtProductCrudFormView>
       ! copy http request untuk menambahkan data kamu yang sudah ada,
       ! kesini
   }
+  */
+
+  /*
 
   29. Ok, lanjut~
   if (isEditMode){
@@ -106,7 +125,40 @@ class HtProductCrudFormController extends State<HtProductCrudFormView>
   save() async {
     if (!formKey.currentState!.validate()) return;
     showLoading();
-
+    if (isEditMode == true) {
+      var id = widget.item!["id"];
+      var response = await Dio().post(
+        "${AppConfig.baseUrl}/products/$id",
+        options: Options(
+          headers: {
+            "Content-Type": "application/json",
+          },
+        ),
+        data: {
+          "photo": photo,
+          "product_name": productName,
+          "price": price,
+          "description": description
+        },
+      );
+      Map obj = response.data;
+    } else {
+      var response = await Dio().post(
+        "${AppConfig.baseUrl}/products",
+        options: Options(
+          headers: {
+            "Content-Type": "application/json",
+          },
+        ),
+        data: {
+          "photo": photo,
+          "product_name": productName,
+          "price": price,
+          "description": description,
+        },
+      );
+      Map obj = response.data;
+    }
     /*
     TODO: --
     8. buat http request post

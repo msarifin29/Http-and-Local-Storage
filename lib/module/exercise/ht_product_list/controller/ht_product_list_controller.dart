@@ -71,7 +71,18 @@ class HtProductListController extends State<HtProductListView>
     @GET
     @URL
     "${AppConfig.baseUrl}/products"
+    */
+    var response = await Dio().get(
+      "${AppConfig.baseUrl}/products",
+      options: Options(
+        headers: {
+          "Content-Type": "application/json",
+        },
+      ),
+    );
+    Map obj = response.data;
 
+    /*
     2. Masukkan response data ke dalam productList
     productList = obj["data"];
 
@@ -85,5 +96,8 @@ class HtProductListController extends State<HtProductListView>
     Jika list-nya ter-refresh,
     Tasks ini selesai
     */
+
+    productList = obj["data"];
+    setState(() {});
   }
 }

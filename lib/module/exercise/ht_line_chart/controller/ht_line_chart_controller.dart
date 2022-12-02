@@ -3,7 +3,6 @@ import 'dart:math';
 import 'package:example/config.dart';
 import 'package:example/core.dart';
 import 'package:flutter/material.dart';
-import '../../../../model/sales_data.dart';
 
 class HtLineChartController extends State<HtLineChartView>
     implements MvcController {
@@ -34,7 +33,17 @@ class HtLineChartController extends State<HtLineChartView>
     @GET
     @URL
    "${AppConfig.baseUrl}/sales",
-
+    */
+    var response = await Dio().get(
+      "${AppConfig.baseUrl}/sales",
+      options: Options(
+        headers: {
+          "Content-Type": "application/json",
+        },
+      ),
+    );
+    Map obj = response.data;
+    /*
     2. Masukkan response data ke dalam salesDataList,
     gunakan looping seperti ini:
     ###
@@ -52,6 +61,17 @@ class HtLineChartController extends State<HtLineChartView>
 
     3. Panggil setState setelah-nya
     */
+    List items = obj["data"];
+    for (var i = 0; i < items.length; i++) {
+      var item = items[i];
+      salesDataList.add(
+        SalesData(
+          year: item["year"],
+          sales: item["sales"],
+        ),
+      );
+    }
+    setState(() {});
   }
 
   refresh({

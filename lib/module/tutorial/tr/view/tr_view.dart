@@ -79,42 +79,42 @@ class TrView extends StatefulWidget {
           padding: const EdgeInsets.all(10.0),
           child: Column(
             children: [
-              title("Example"),
-              TrList(
-                title: "FIC State Management",
-                items: controller.ficStateManagementList,
-                color: Colors.purple,
-              ),
-              TrList(
-                title: "State Management",
-                items: controller.items,
-                color: Colors.red,
-              ),
-              TrList(
-                title: "Form",
-                items: controller.formItems,
-                color: Colors.green,
-              ),
-              TrList(
-                title: "HTTP Request",
-                items: controller.httpRequestItems,
-                color: Colors.green,
-              ),
-              TrList(
-                title: "Firebase x Firestore",
-                items: controller.firebaseExampleItems,
-                color: Colors.red,
-              ),
-              TrList(
-                title: "UI Example",
-                items: controller.uiExampleItems,
-                color: Colors.cyan,
-              ),
-              TrList(
-                title: "Local Storage",
-                items: controller.localStorageItems,
-                color: Colors.brown,
-              ),
+              // title("Example"),
+              // TrList(
+              //   title: "FIC State Management",
+              //   items: controller.ficStateManagementList,
+              //   color: Colors.purple,
+              // ),
+              // TrList(
+              //   title: "State Management",
+              //   items: controller.items,
+              //   color: Colors.red,
+              // ),
+              // TrList(
+              //   title: "Form",
+              //   items: controller.formItems,
+              //   color: Colors.green,
+              // ),
+              // TrList(
+              //   title: "HTTP Request",
+              //   items: controller.httpRequestItems,
+              //   color: Colors.green,
+              // ),
+              // TrList(
+              //   title: "Firebase x Firestore",
+              //   items: controller.firebaseExampleItems,
+              //   color: Colors.red,
+              // ),
+              // TrList(
+              //   title: "UI Example",
+              //   items: controller.uiExampleItems,
+              //   color: Colors.cyan,
+              // ),
+              // TrList(
+              //   title: "Local Storage",
+              //   items: controller.localStorageItems,
+              //   color: Colors.brown,
+              // ),
               title("Exercise"),
               TrList(
                 title: "State Management Exercise",

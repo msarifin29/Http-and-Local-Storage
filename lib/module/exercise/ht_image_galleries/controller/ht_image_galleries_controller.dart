@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:example/config.dart';
 import 'package:example/core.dart';
 import 'package:flutter/material.dart';
@@ -11,9 +13,9 @@ class HtImageGalleriesController extends State<HtImageGalleriesView>
   void initState() {
     instance = this;
     //4. Panggil function loadImageGalleries();
+    loadImageGalleries();
     //5. Back ke halaman sebelum-nya, klik tombol + di atas
     //6. Jika gambar muncul di dalam List, lanjut ke point nomor 7
-    loadImageGalleries();
     super.initState();
   }
 
@@ -31,7 +33,16 @@ class HtImageGalleriesController extends State<HtImageGalleriesView>
     TODO: --
     1. Buat sebuah get request menggunakan DIO
     ! snippet: dio_get
-
+    */
+    var response = await Dio().get(
+      "${AppConfig.baseUrl}/image-galleries?limit=100",
+      options: Options(
+        headers: {
+          "Content-Type": "application/json",
+        },
+      ),
+    );
+    /*
     @GET
     @URL
     "${AppConfig.baseUrl}/image-galleries?limit=100",
@@ -41,15 +52,6 @@ class HtImageGalleriesController extends State<HtImageGalleriesView>
 
     3. Panggil setState setelah-nya
     */
-
-    var response = await Dio().get(
-      "${AppConfig.baseUrl}/image-galleries?limit=100",
-      options: Options(
-        headers: {
-          "Content-Type": "application/json",
-        },
-      ),
-    );
     Map obj = response.data;
     imageGalleries = obj["data"];
     setState(() {});
@@ -113,8 +115,20 @@ class HtImageGalleriesController extends State<HtImageGalleriesView>
     /*
     7. Gunakan file picker yang support untuk semua platform
     !snippet: get_image_with_file_picker
+*/
+    FilePickerResult? result = await FilePicker.platform.pickFiles(
+      type: FileType.custom,
+      allowedExtensions: [
+        "png",
+        "jpg",
+      ],
+      allowMultiple: false,
+    );
+    if (result == null) return;
+    File file = File(result.files.single.path!);
+    String filePath = file.path;
 
-    8. Nah, sekarang kamu sudah bisa mengambil gambar dengan
+    /*  8. Nah, sekarang kamu sudah bisa mengambil gambar dengan
     file picker, Mari kita coba upload ke file hosting.
     Disini kita menggunakan IMGBB
     Bwt script Dio untuk upload file
@@ -122,8 +136,22 @@ class HtImageGalleriesController extends State<HtImageGalleriesView>
 
     9. Nice, sekarang kamu sudah berhasil mengupload file dan
     mendapatkan url-nya!
+*/
+    final formData = FormData.fromMap({
+      'image': MultipartFile.fromBytes(
+        File(filePath).readAsBytesSync(),
+        filename: "upload.jpg",
+      ),
+    });
 
-    10. Tambahkan kita baris kode ini setelah-nya:
+    var res = await Dio().post(
+      'https://api.imgbb.com/1/upload?key=b55ef3fd02b80ab180f284e479acd7c4',
+      data: formData,
+    );
+
+    var data = res.data["data"];
+    var url = data["url"];
+    /*  10. Tambahkan kita baris kode ini setelah-nya:
     ####
     await addImage(url);
     await loadImageGalleries();
@@ -136,6 +164,9 @@ class HtImageGalleriesController extends State<HtImageGalleriesView>
     12. Pilih file, dan lihatlah apakah gambar itu muncul
     Di dalam list, jika sudah muncul lanjut ke point 13
     */
+    await addImage(url);
+    await loadImageGalleries();
+    hideLoading();
   }
 
   doUploadAndroidIosAndWeb() async {
@@ -143,28 +174,53 @@ class HtImageGalleriesController extends State<HtImageGalleriesView>
     /*
     13. Ambil gambar dari gallery, gunakan snippet
     ! snippet: get_image_gallery 
+    */
+    XFile? image = await ImagePicker().pickImage(
+      source: ImageSource.gallery,
+      imageQuality: 40,
+    );
+    String? filePath = image?.path;
 
-    14. Nah, sekarang kamu sudah bisa mengambil gambar dengan
+    /*14. Nah, sekarang kamu sudah bisa mengambil gambar dengan
     image picker, Mari kita coba upload ke file hosting.
     Disini kita menggunakan IMGBB
     Bwt script Dio untuk upload file
     !snippet: dio_upload
+    */
+    final formData = FormData.fromMap({
+      'image': MultipartFile.fromBytes(
+        File(filePath!).readAsBytesSync(),
+        filename: "upload.jpg",
+      ),
+    });
 
-    15. Oops, filePath mungkin saja null. Mari kita handle.
+    var res = await Dio().post(
+      'https://api.imgbb.com/1/upload?key=b55ef3fd02b80ab180f284e479acd7c4',
+      data: formData,
+    );
+
+    var data = res.data["data"];
+    var url = data["url"];
+
+    /*15. Oops, filePath mungkin saja null. Mari kita handle.
     setelah deklarasi String? filePath;
 
     String? filePath = image?.path;
     if(filePath == null) return;
-
-    16. Tambahkan kita baris kode ini setelah kamu mengupload
+    */
+    if (filePath == null) return;
+    /*16. Tambahkan kita baris kode ini setelah kamu mengupload
     file ke imgbb
     ####
     await addImage(url);
     await loadImageGalleries();
     hideLoading();
     ####
-
-    17. Klik tombol Upload 2, pilih sebuah file
+    */
+    await addImage(url);
+    await loadImageGalleries();
+    hideLoading();
+    /*17. Klik tombol Upload 2, pilih sebuah file
     18. Jika file yang kamu pilih berhasil di upload,
     Tasks ini selesai!
     Selamat kamu sudah berhasil mengambil gambar dengan

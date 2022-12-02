@@ -30,12 +30,24 @@ class HtMapMarkerController extends State<HtMapMarkerView>
     @GET
     @URL
     "${AppConfig.baseUrl}/user-positions",
-
+    */
+    var response = await Dio().get(
+      "${AppConfig.baseUrl}/user-positions",
+      options: Options(
+        headers: {
+          "Content-Type": "application/json",
+        },
+      ),
+    );
+    Map obj = response.data;
+    /*
     2. Buatlah sebuah List, tampung isi obj["data"]
     ###
     List list = obj["data"];
-    ###
+    ###*/
+    List list = obj["data"];
 
+    /*
     3. Yuk, kita tambahkan marker dari response http
     Gunakan kode ini:
     ###
@@ -55,10 +67,28 @@ class HtMapMarkerController extends State<HtMapMarkerView>
         ),
       );
     }
-    ###
-
+    ###*/
+    for (var i = 0; i < list.length; i++) {
+      var item = list[i];
+      markerList.add(
+        Marker(
+          point: LatLng(
+            item["latitude"],
+            item["longitude"],
+          ),
+          builder: (context) => const Icon(
+            Icons.person,
+            color: Colors.green,
+            size: 32,
+          ),
+        ),
+      );
+    }
+    /*
     4. Panggil setState di akhir function
-
+    */
+    setState(() {});
+    /*
     5. Klik tombol add, jika marker muncul di Map,
     Tasks ini selesai
     */

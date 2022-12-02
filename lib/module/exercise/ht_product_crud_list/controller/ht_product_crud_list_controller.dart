@@ -50,6 +50,7 @@ class HtProductCrudListController extends State<HtProductCrudListView>
         },
       ),
     );
+    print(response.data);
     Map obj = response.data;
     productList = obj["data"];
     setState(() {});
@@ -93,7 +94,16 @@ class HtProductCrudListController extends State<HtProductCrudListView>
     Maka tasks PRODUCT CRUD selesai
     Whuff~
     */
-
+    var id = item["id"];
+    var response = await Dio().delete(
+      options: Options(
+        headers: {
+          "Content-Type": "application/json",
+        },
+      ),
+      "${AppConfig.baseUrl}/products/$id",
+    );
+    print(response.statusCode);
     //! #############################
     //! Jangan ubah kode dibawah
     //! #############################

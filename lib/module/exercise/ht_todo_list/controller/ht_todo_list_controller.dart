@@ -39,6 +39,17 @@ class HtTodoListController extends State<HtTodoListView>
 
     3. Panggil setState setelah-nya, lanjut ke point 4
     */
+    var response = await Dio().get(
+      "${AppConfig.baseUrl}/todos",
+      options: Options(
+        headers: {
+          "Content-Type": "application/json",
+        },
+      ),
+    );
+    Map obj = response.data;
+    todoList = obj["data"];
+    setState(() {});
   }
 
   addTodo() async {
@@ -58,13 +69,29 @@ class HtTodoListController extends State<HtTodoListView>
       "todo": faker.lorem.sentence(),
       "done": false,
     },
-
+     */
+    var response = await Dio().post(
+      "${AppConfig.baseUrl}/todos",
+      options: Options(
+        headers: {
+          "Content-Type": "application/json",
+        },
+      ),
+      data: {
+        "todo": faker.lorem.sentence(),
+        "done": false,
+      },
+    );
+    Map obj = response.data;
+    /*
     5. Panggil kode ini setelah-nya:
     ###
     await loadTodoList();
     hideLoading();
     ###
     */
+    await loadTodoList();
+    hideLoading();
   }
 
   deleteTodo(item) async {
@@ -89,6 +116,18 @@ class HtTodoListController extends State<HtTodoListView>
     hideLoading();
     ###
     */
+    var id = item["id"];
+    var response = await Dio().delete(
+      options: Options(
+        headers: {
+          "Content-Type": "application/json",
+        },
+      ),
+      "${AppConfig.baseUrl}/todos/$id",
+    );
+    print(response.statusCode);
+    await loadTodoList();
+    hideLoading();
   }
 
   updateTodo(item) async {
@@ -116,7 +155,24 @@ class HtTodoListController extends State<HtTodoListView>
     await loadTodoList();
     hideLoading();
     ###
-
+    */
+    var id = item["id"];
+    var response = await Dio().post(
+      "${AppConfig.baseUrl}/todos/$id",
+      options: Options(
+        headers: {
+          "Content-Type": "application/json",
+        },
+      ),
+      data: {
+        "data": item,
+        "done": item["done"] = !item["done"],
+      },
+    );
+    Map obj = response.data;
+    await loadTodoList();
+    hideLoading();
+    /*
     13. YUk, test klik tombol add, apakah todo bertambah?
     14. Ceklis salah satu todo, apakah itu berubah?
     15. Test menghapus todo, klik tombol silang. Apakah todo-nya hilang?

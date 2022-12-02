@@ -18,9 +18,13 @@ class HtProductCrudFormView extends StatefulWidget {
   16. ok, bagus lanjut ke point 17
   buka HtProductCrudFormController
   */
+
   const HtProductCrudFormView({
     Key? key,
+    this.item,
   }) : super(key: key);
+
+  final Map? item;
 
   Widget build(context, HtProductCrudFormController controller) {
     controller.view = this;
@@ -47,7 +51,7 @@ class HtProductCrudFormView extends StatefulWidget {
           child: Container(
             padding: const EdgeInsets.all(20.0),
             child: Column(
-              children: const [
+              children: [
                 /*
                 TODO: --
                 2. buat variabel photo, productName dan price
@@ -57,6 +61,9 @@ class HtProductCrudFormView extends StatefulWidget {
                 String productName = "";
                 double price = 0.0;
                 String description = "";
+                */
+
+                /*
 
                 3. buat sebuah image picker,
                 ! snippet : q_image_picker
@@ -66,7 +73,17 @@ class HtProductCrudFormView extends StatefulWidget {
 
                 di dalam event onChanged, ambil value-nya
                 Tampung di variabel controller.photo
-
+                 */
+                QImagePicker(
+                  label: "Photo",
+                  hint: "Your photo",
+                  validator: Validator.required,
+                  value: controller.photo,
+                  onChanged: (value) {
+                    controller.photo = value;
+                  },
+                ),
+                /*
                 4. buat sebuah textfield,
                 ! snippet : q_textfield
                 atur property-nya:
@@ -75,7 +92,17 @@ class HtProductCrudFormView extends StatefulWidget {
 
                 di dalam event onChanged, ambil value-nya
                 Tampung di variabel controller.productName
-
+                */
+                QTextField(
+                  label: "Product Name",
+                  hint: "Product",
+                  validator: Validator.required,
+                  value: controller.productName,
+                  onChanged: (value) {
+                    controller.productName = value;
+                  },
+                ),
+                /*
                 5. buat sebuah numberfield,
                 ! snippet : q_numberfield
                 atur property-nya:
@@ -86,7 +113,18 @@ class HtProductCrudFormView extends StatefulWidget {
                 Tampung di variabel controller.price
                 Opps~, jangan lupa di konversi ke double!
                 controller.price = double.parse(value);
-
+                */
+                QNumberField(
+                  label: "Price",
+                  hint: "Price",
+                  validator: Validator.required,
+                  value: controller.price.toString(),
+                  onChanged: (value) {
+                    if (value.isEmpty) return;
+                    controller.price = double.parse(value);
+                  },
+                ),
+                /*
                 6. buat sebuah textarea/memofield,
                 ! snippet : q_memofield
                 atur property-nya:
@@ -95,7 +133,17 @@ class HtProductCrudFormView extends StatefulWidget {
 
                 di dalam event onChanged, ambil value-nya
                 Tampung di variabel controller.description
-
+                */
+                QMemoField(
+                  label: "Description",
+                  hint: "Description",
+                  validator: Validator.required,
+                  value: controller.description,
+                  onChanged: (value) {
+                    controller.description = value;
+                  },
+                ),
+                /*
 
                 7. Lanjut ke step berikut-nya, buka Controller
                 Fokus ke function save()
