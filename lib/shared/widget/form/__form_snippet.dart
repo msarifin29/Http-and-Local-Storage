@@ -1,6 +1,5 @@
 //#GROUP_TEMPLATE q_form
 import 'package:example/core.dart';
-import 'package:example/shared/widget/form/image_picker.dart';
 import 'package:flutter/material.dart';
 
 class FormExampleWithSnippetView extends StatefulWidget {

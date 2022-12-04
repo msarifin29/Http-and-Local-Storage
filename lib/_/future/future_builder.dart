@@ -73,7 +73,9 @@ class TFutureBuilder extends StatelessWidget {
               //#TEMPLATE future_woocommerce_products_example
               Builder(builder: (context) {
                 var dio = Dio();
+                // ignore: todo
                 //TODO: change to your baseurl
+                // ignore: todo
                 //TODO: https is required
                 String baseUrl = "https://192.168.1.5/wordpress/";
                 (dio.httpClientAdapter as DefaultHttpClientAdapter)
@@ -86,6 +88,7 @@ class TFutureBuilder extends StatelessWidget {
                 };
                 return FutureBuilder(
                   future: dio.get(
+                    // ignore: todo
                     //TODO: use your consumer_key and customer_secret
                     "\${baseUrl}wp-json/wc/v3/products?consumer_key=ck_b7f28b13d994210b2646814b757f1a5b3a72a89b&consumer_secret=cs_d9c75cecf81d03b9601c003524cda471cbe47b95",
                   ),

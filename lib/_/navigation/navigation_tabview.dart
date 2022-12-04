@@ -19,6 +19,7 @@ class _TemplateNavigationTabViewState extends State<TemplateNavigationTabView>
 
   @override
   void initState() {
+    // ignore: todo
     // TODO: implement initState
     super.initState();
   }

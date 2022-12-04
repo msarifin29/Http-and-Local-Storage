@@ -63,12 +63,11 @@ class LsLoginByPinController extends State<LsLoginByPinView>
     if (pin.length >= 4) return;
     pin += number.toString();
     setState(() {});
-    if (pin.length < 4) {
-      String currentPin = await mainStorage.get("pin") ?? " ";
-      if (pin != currentPin) {
-        showInfoDialog("Pin salah!");
-        return;
-      }
+    if (pin.length < 4) return;
+    String currentPin = await mainStorage.get("pin") ?? " ";
+    if (pin != currentPin) {
+      showInfoDialog("Pin salah!");
+      return;
     }
     await showInfoDialog("Berhasil login");
     Get.back();

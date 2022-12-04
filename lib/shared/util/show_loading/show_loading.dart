@@ -44,19 +44,6 @@ showLoading({
           ),
         ],
       );
-      return AlertDialog(
-        content: Wrap(
-          children: const [
-            Card(
-              child: SizedBox(
-                width: 50,
-                height: 50,
-                child: CircularProgressIndicator(),
-              ),
-            ),
-          ],
-        ),
-      );
     },
   );
 }

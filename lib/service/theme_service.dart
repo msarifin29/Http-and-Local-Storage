@@ -1,8 +1,6 @@
 import 'package:example/core.dart';
 import 'package:flutter/material.dart';
 
-import '../shared/util/theme/light_theme.dart';
-
 class ThemeService {
   static int selectedIndex = 0;
 

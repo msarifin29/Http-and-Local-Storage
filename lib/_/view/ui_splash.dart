@@ -35,6 +35,7 @@ class TemplateSplashScreen extends StatelessWidget {
 
         Navigator.push(
           context,
+          // ignore: todo
           //TODO: set your next widget
           MaterialPageRoute(builder: (context) => const Scaffold()),
         );

@@ -52,10 +52,4 @@ void main() async {
     // home: const UiDailiyTodoListView(),
     // home: const LifeCycleDemoView(),
   ));
-
-  runApp(MaterialApp.router(
-    title: 'Capek Ngoding',
-    debugShowCheckedModeBanner: false,
-    routerConfig: getRouters(),
-  ));
 }

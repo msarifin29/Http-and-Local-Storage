@@ -1,8 +1,7 @@
+// ignore_for_file: avoid_unnecessary_containers
 
 import 'package:flutter/material.dart';
 import 'package:example/core.dart';
-
-
 
 class TkMainNavigationView extends StatefulWidget {
   const TkMainNavigationView({Key? key}) : super(key: key);

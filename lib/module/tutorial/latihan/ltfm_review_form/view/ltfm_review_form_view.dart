@@ -29,9 +29,34 @@ class LtfmReviewFormView extends StatefulWidget {
                         child: SizedBox(
                           width: MediaQuery.of(context).size.width,
                           child: ListBody(
-                            children: const <Widget>[
+                            children: <Widget>[
                               //! 6. Pindahkan textarea review, ratingbar, dan tombol review
+                              QMemoField(label: "Review", onChanged: (val) {}),
                               //!    yang berada di bawah ke dalam sini (di dalam children)
+                              RatingBar.builder(
+                                initialRating: 2.0,
+                                minRating: 1,
+                                direction: Axis.horizontal,
+                                allowHalfRating: true,
+                                itemCount: 5,
+                                itemSize: 28.0,
+                                itemBuilder: (context, _) => const Icon(
+                                  Icons.star,
+                                  color: Colors.amber,
+                                ),
+                                onRatingUpdate: (rating) {},
+                              ),
+                              //! 3. Tambahkan SizedBox(height: 30),
+                              const SizedBox(
+                                height: 30.0,
+                              ),
+                              //! 4. Tambahkan tombol "Review"
+                              ElevatedButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                child: const Text("Review"),
+                              ),
                               //! 7. Test fitur ini dengan klik tombol Rate di pojok kanan atas
                               //! 8. Jika popup tertutup setelah tombol review di klik,
                               //!    Tasks ini selesai
@@ -69,8 +94,7 @@ class LtfmReviewFormView extends StatefulWidget {
                 onRatingUpdate: (rating) {},
               ),
               */
-              //! 3. Tambahkan SizedBox(height: 30),
-              //! 4. Tambahkan tombol "Review"
+
               //! 5. Tambahkan kode ini ketika tombol review di klik
               /*
               Navigator.pop(context);

@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_null_comparison
+
 import 'dart:io';
 
 import 'package:example/config.dart';
@@ -30,7 +32,6 @@ class HtImageGalleriesController extends State<HtImageGalleriesView>
     imageGalleries = [];
     setState(() {});
     /*
-    TODO: --
     1. Buat sebuah get request menggunakan DIO
     ! snippet: dio_get
     */
@@ -180,6 +181,7 @@ class HtImageGalleriesController extends State<HtImageGalleriesView>
       imageQuality: 40,
     );
     String? filePath = image?.path;
+    if (filePath == null) return;
 
     /*14. Nah, sekarang kamu sudah bisa mengambil gambar dengan
     image picker, Mari kita coba upload ke file hosting.
@@ -189,7 +191,7 @@ class HtImageGalleriesController extends State<HtImageGalleriesView>
     */
     final formData = FormData.fromMap({
       'image': MultipartFile.fromBytes(
-        File(filePath!).readAsBytesSync(),
+        File(filePath).readAsBytesSync(),
         filename: "upload.jpg",
       ),
     });
@@ -208,7 +210,7 @@ class HtImageGalleriesController extends State<HtImageGalleriesView>
     String? filePath = image?.path;
     if(filePath == null) return;
     */
-    if (filePath == null) return;
+
     /*16. Tambahkan kita baris kode ini setelah kamu mengupload
     file ke imgbb
     ####

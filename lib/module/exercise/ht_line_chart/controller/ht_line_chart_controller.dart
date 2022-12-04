@@ -26,7 +26,6 @@ class HtLineChartController extends State<HtLineChartView>
     salesDataList = [];
     setState(() {});
     /*
-    TODO: --
     1. Buat sebuah get request menggunakan DIO
     ! snippet: dio_get
 

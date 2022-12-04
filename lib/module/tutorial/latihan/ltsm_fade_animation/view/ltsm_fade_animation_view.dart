@@ -18,7 +18,7 @@ class LtsmFadeAnimationView extends StatefulWidget {
           padding: const EdgeInsets.all(10.0),
           child: Column(
             children: [
-              //TODO: Buat variabel animate di dalam State/Controller
+              // Buat variabel animate di dalam State/Controller
               // bool animate = false;
               AnimatedContainer(
                 duration: const Duration(milliseconds: 100),
@@ -26,10 +26,11 @@ class LtsmFadeAnimationView extends StatefulWidget {
                 width: 100.0,
                 margin: const EdgeInsets.only(),
                 decoration: BoxDecoration(
-                  //TODO:
                   //jika animate == true, atur opacity menjadi 0.5
                   //jika animate == false, atur opacity menjadi 1.0
-                  color: Colors.red.withOpacity(1.0),
+                  color: controller.animated
+                      ? Colors.red.withOpacity(1.0)
+                      : Colors.red.withOpacity(0.5),
                   borderRadius: const BorderRadius.all(
                     Radius.circular(
                       16.0,
@@ -40,7 +41,7 @@ class LtsmFadeAnimationView extends StatefulWidget {
               const SizedBox(
                 height: 20.0,
               ),
-              //TODO:
+              //
               //di dalam event onPressed(),
               //atur animate = true, jika nilai animate adalah false
               //atur animate = false, jika nilai animate adalah true
@@ -50,7 +51,9 @@ class LtsmFadeAnimationView extends StatefulWidget {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blueGrey,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  controller.animated = !controller.animated;
+                },
               ),
             ],
           ),

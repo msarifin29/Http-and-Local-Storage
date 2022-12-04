@@ -15,7 +15,6 @@ class HtProductCrudFormController extends State<HtProductCrudFormView>
   void initState() {
     instance = this;
     /*
-    TODO: --
     17. yuk kita atur nilai awal-nya
     gunakan kode ini:
     ###
@@ -47,7 +46,6 @@ class HtProductCrudFormController extends State<HtProductCrudFormView>
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   /*
-  TODO: --
   27. Kita ingin membuat tombol save bisa digunakan
   Untuk mengupdate dan menambahkan data
   Ok, pertama2 buat sebuah getter untuk 
@@ -160,7 +158,6 @@ class HtProductCrudFormController extends State<HtProductCrudFormView>
       Map obj = response.data;
     }
     /*
-    TODO: --
     8. buat http request post
     ! snippet: dio_post 
 

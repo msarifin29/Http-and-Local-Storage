@@ -16,20 +16,36 @@ class LtfmLoginView extends StatefulWidget {
         child: Container(
           padding: const EdgeInsets.all(10.0),
           child: Column(
-            children: const [
+            children: [
               //! 1. Buat sebuah textfield dengan property berikut:
               // snippet: q_textfield
               // value: admin@demo.com
               // label: Email
-
+              QTextField(
+                label: "Email",
+                hint: "Email",
+                validator: Validator.required,
+                value: "admin@demo.com",
+                onChanged: (value) {},
+              ),
               //! 2. Buat sebuah textfield dengan property berikut:
               // snippet: q_password
               // value: 123456
               // label: Password
-
+              QTextField(
+                label: "Password",
+                hint: "Your password",
+                obscure: true,
+                validator: Validator.required,
+                value: "123456",
+                onChanged: (value) {},
+              ),
               //! 3. Buat sebuah tombol,
               //gunakan icon: Icons.login
               //atur text-nya: Login
+              IconButton(
+                  onPressed: controller.doLogin(),
+                  icon: const Icon(Icons.login)),
               //ketika di klik, panggil:
               // controller.doLogin()
               //Jika dialog muncul ketika tombol di klik, tasks ini selesai

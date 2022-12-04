@@ -194,7 +194,27 @@ class LtfmCheckoutFormView extends StatefulWidget {
               }
               */
               // dropdown
-
+              QDropdownField(
+                  label: "Checkout",
+                  items: const [
+                    {
+                      "label": "Cash",
+                      "value": 1,
+                    },
+                    {
+                      "label": "Credit Card",
+                      "value": 2,
+                    },
+                    {
+                      "label": "OVO",
+                      "value": 3,
+                    },
+                    {
+                      "label": "Dana",
+                      "value": 4,
+                    }
+                  ],
+                  onChanged: (value, label) {}),
               // end of dropdown
 
               //! 1. Buat sebuah tombol Checkout
@@ -236,6 +256,44 @@ class LtfmCheckoutFormView extends StatefulWidget {
                 },
               );
               */
+              SizedBox(
+                height: 40.0,
+                width: MediaQuery.of(context).size.width,
+              ),
+              ElevatedButton.icon(
+                onPressed: () async {
+                  Navigator.pop(context);
+                  await showDialog<void>(
+                    context: context,
+                    barrierDismissible: true,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: const Text('Checkout success'),
+                        content: SingleChildScrollView(
+                          child: ListBody(
+                            children: const <Widget>[
+                              Text('Your order was placed!'),
+                            ],
+                          ),
+                        ),
+                        actions: <Widget>[
+                          ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.blueGrey,
+                            ),
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: const Text("Ok"),
+                          ),
+                        ],
+                      );
+                    },
+                  );
+                },
+                icon: const Icon(Icons.check),
+                label: const Text("Checkout"),
+              ),
             ],
           ),
         ),

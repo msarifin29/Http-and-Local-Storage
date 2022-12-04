@@ -1,5 +1,4 @@
 import 'package:example/core.dart';
-import 'package:example/shared/widget/form/image_picker.dart';
 import 'package:flutter/material.dart';
 
 class FormExampleView extends StatefulWidget {

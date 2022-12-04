@@ -56,22 +56,6 @@ class _QCategoryPickerState extends State<QCategoryPicker> {
               },
             ),
           );
-          return InkWell(
-            onTap: () {
-              selectedIndex = index;
-              setState(() {});
-              widget.onTap(item);
-            },
-            child: Container(
-              margin: const EdgeInsets.only(
-                right: 10.0,
-              ),
-              child: Chip(
-                backgroundColor: selected ? Colors.red : Colors.grey,
-                label: Text("$item"),
-              ),
-            ),
-          );
         },
       ),
     );

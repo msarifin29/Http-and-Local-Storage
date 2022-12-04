@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_unnecessary_containers
+
 import 'package:badges/badges.dart';
 import 'package:custom_clippers/custom_clippers.dart';
 import 'package:example/core.dart';

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:example/core.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
-import '../../../../model/sales_data.dart';
-import '../controller/ht_pie_chart_controller.dart';
 
 class HtPieChartView extends StatefulWidget {
   const HtPieChartView({Key? key}) : super(key: key);

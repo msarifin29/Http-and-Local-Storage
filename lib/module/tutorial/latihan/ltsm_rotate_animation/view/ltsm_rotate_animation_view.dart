@@ -18,20 +18,22 @@ class LtsmRotateAnimationView extends StatefulWidget {
           padding: const EdgeInsets.all(10.0),
           child: Column(
             children: [
-              //TODO: Buat variabel animate di dalam State/Controller
+              // Buat variabel animate di dalam State/Controller
               // bool animate = false;
               AnimatedRotation(
-                //TODO:
+                //
                 //jika animate == true, atur derajat rotasinya menjadi 90
                 //jika animate == false, atur opacity menjadi 0
-                turns: 15 / 360,
+                turns: controller.animated ? 90 : 0,
                 duration: const Duration(milliseconds: 2000),
                 child: Container(
                   height: 100.0,
                   width: 100.0,
                   margin: const EdgeInsets.only(),
                   decoration: BoxDecoration(
-                    color: Colors.red.withOpacity(1.0),
+                    color: controller.animated
+                        ? Colors.red.withOpacity(1.0)
+                        : Colors.red.withOpacity(0),
                     borderRadius: const BorderRadius.all(
                       Radius.circular(
                         16.0,

@@ -1,5 +1,7 @@
 //#GROUP_TEMPLATE class
 //#TEMPLATE reuseable
+// ignore_for_file: camel_case_types
+
 import 'package:flutter/material.dart';
 
 class CURSOR_1 extends StatefulWidget {

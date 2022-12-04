@@ -1,3 +1,5 @@
+// ignore_for_file: dead_code
+
 import 'package:example/core.dart';
 
 import 'package:flutter/material.dart';
@@ -605,349 +607,349 @@ class MainNavigationViewState extends State<MainNavigationView> {
       route: '/ltsm_theme',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Tutorial Extension',
       route: '/tutorial_extension',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Pos Login',
       route: '/pos_login',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Pos Main Navigation',
       route: '/pos_main_navigation',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Pos Product List',
       route: '/pos_product_list',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Pos Product Form',
       route: '/pos_product_form',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Pos Order',
       route: '/pos_order',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Pos Order List',
       route: '/pos_order_list',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Fic Counter',
       route: '/fic_counter',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Fic Loading',
       route: '/fic_loading',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Fic Enable Or Disabled',
       route: '/fic_enable_or_disabled',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Fic Visibility',
       route: '/fic_visibility',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Fic Animation',
       route: '/fic_animation',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Fic Navigation',
       route: '/fic_navigation',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Fic Cart',
       route: '/fic_cart',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Fic Filter List',
       route: '/fic_filter_list',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Fic Theme',
       route: '/fic_theme',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Http Login',
       route: '/http_login',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Http Product List',
       route: '/http_product_list',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Http Product Form',
       route: '/http_product_form',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Tf Login',
       route: '/tf_login',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Tf Product List',
       route: '/tf_product_list',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Tf Product Form',
       route: '/tf_product_form',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Tf Register',
       route: '/tf_register',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Ui Dailiy Todo List',
       route: '/ui_dailiy_todo_list',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Tk Main Navigation',
       route: '/tk_main_navigation',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Tk Dashboard',
       route: '/tk_dashboard',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Ovo Dashboard',
       route: '/ovo_dashboard',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Ack Tutorial Cart',
       route: '/ack_tutorial_cart',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Ls Login',
       route: '/ls_login',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Ls Theme',
       route: '/ls_theme',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Ls Product List',
       route: '/ls_product_list',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Ls Product Form',
       route: '/ls_product_form',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Ls Form History',
       route: '/ls_form_history',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Tr Basic Widget',
       route: '/tr_basic_widget',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Tr Basic Detail',
       route: '/tr_basic_detail',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Ls First Time Setup',
       route: '/ls_first_time_setup',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Ls Login And Save Token',
       route: '/ls_login_and_save_token',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Ls Create Pin',
       route: '/ls_create_pin',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Ls Login By Pin',
       route: '/ls_login_by_pin',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Ls Customer Crud',
       route: '/ls_customer_crud',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Ls Product Crud',
       route: '/ls_product_crud',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Ls Pos',
       route: '/ls_pos',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Ls Pos With Table Selection',
       route: '/ls_pos_with_table_selection',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Ls Favorite',
       route: '/ls_favorite',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Ls User Setting',
       route: '/ls_user_setting',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Ls Login Form With History',
       route: '/ls_login_form_with_history',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Ht Login',
       route: '/ht_login',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Ht Product List',
       route: '/ht_product_list',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Ht Dashboard',
       route: '/ht_dashboard',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Ht Image Galleries',
       route: '/ht_image_galleries',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Ht Statistic Card',
       route: '/ht_statistic_card',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Ht Line Chart',
       route: '/ht_line_chart',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Ht Pie Chart',
       route: '/ht_pie_chart',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Ht Todo List',
       route: '/ht_todo_list',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Ht Product Crud List',
       route: '/ht_product_crud_list',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Ht Product Crud Form',
       route: '/ht_product_crud_form',
       items: [],
     ),
-          NavigationItem(
+    NavigationItem(
       icon: const Icon(MdiIcons.web),
       label: 'Ht Map Marker',
       route: '/ht_map_marker',
       items: [],
     ),
-          //@NAVIGATION_GENERATOR
+    //@NAVIGATION_GENERATOR
   ];
 
   @override

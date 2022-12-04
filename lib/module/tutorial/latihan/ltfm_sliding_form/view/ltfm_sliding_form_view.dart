@@ -28,8 +28,8 @@ class LtfmSlidingFormView extends StatefulWidget {
                 child: Container(
                   padding: const EdgeInsets.all(20.0),
                   child: Column(
-                    children: const [
-                      Text(
+                    children: [
+                      const Text(
                         "Apply Leave",
                         style: TextStyle(
                           fontSize: 14.0,
@@ -38,16 +38,28 @@ class LtfmSlidingFormView extends StatefulWidget {
                       ),
                       //! 1. buat datepicker, atur label-nya menjadi
                       //? "Leave Date"
-
+                      QDatePicker(
+                          label: "Leave Date", onChanged: (dateTime) {}),
                       //! 2. Buat textarea, atur label-nya menjadi
                       //? "Reason"
 
+                      QDatePicker(label: "Reason", onChanged: (dateTime) {}),
                       //! 3. Tambahkan Divider
-
+                      const Divider(),
                       //! 4. Buat sebuah tombol:
                       //? width: MediaQuery.of(context).size.width,
                       //? height: 40
-
+                      SizedBox(
+                        height: 40.0,
+                        width: MediaQuery.of(context).size.width,
+                        child: TextButton(
+                          onPressed: () {
+                            controller.submitted = !controller.submitted;
+                            controller.update();
+                          },
+                          child: const Text("Confirm"),
+                        ),
+                      ),
                       //! 5. Ketika di klik, tambahkan kode ini:
                       /*
                         controller.submitted = !controller.submitted;

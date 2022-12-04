@@ -60,7 +60,7 @@ class LsFavoriteController extends State<LsFavoriteView>
     Jika tidak hilang, tasks ini selesai!
     */
 
-    item["favorite"] = !item["favorite"];
+    item["favorite"] = !(item["favorite"] ?? false);
     setState(() {});
     saveToLocalStorage();
   }

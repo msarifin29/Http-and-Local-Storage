@@ -23,7 +23,6 @@ class HtLoginController extends State<HtLoginView> implements MvcController {
 
   doLogin() async {
     /*
-    TODO: --
     1. Buat sebuah post request menggunakan DIO
     ! snippet: dio_post
     Atur request-nya menjadi seperti ini:

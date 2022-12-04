@@ -1,8 +1,6 @@
-import 'package:example/model/sales_data.dart';
 import 'package:flutter/material.dart';
 import 'package:example/core.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
-import '../controller/ht_line_chart_controller.dart';
 
 class HtLineChartView extends StatefulWidget {
   const HtLineChartView({Key? key}) : super(key: key);

@@ -132,11 +132,23 @@ class HtProductCrudListView extends StatefulWidget {
                     },
                     child: Card(
                       child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundColor: Colors.grey[200],
-                          backgroundImage: NetworkImage(
-                            item["photo"] ??
-                                "https://i.ibb.co/S32HNjD/no-image.jpg",
+                        // leading: CircleAvatar(
+                        //   radius: 25.0,
+                        //   backgroundColor: Colors.grey[200],
+                        //   backgroundImage: NetworkImage(
+                        //     item["photo"] ??
+                        //         "https://i.ibb.co/S32HNjD/no-image.jpg",
+                        //   ),
+                        // ),
+                        leading: ClipRRect(
+                          borderRadius: BorderRadius.circular(40 / 2),
+                          child: FadeInImage(
+                            height: 40,
+                            width: 40,
+                            fit: BoxFit.cover,
+                            placeholder: const NetworkImage(
+                                "https://i.ibb.co/S32HNjD/no-image.jpg"),
+                            image: NetworkImage(item["photo"]),
                           ),
                         ),
                         title: Text("${item["product_name"]}"),
