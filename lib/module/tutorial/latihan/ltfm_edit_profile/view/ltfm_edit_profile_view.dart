@@ -17,7 +17,9 @@ class LtfmEditProfileView extends StatefulWidget {
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: ElevatedButton(
-              onPressed: controller.save(),
+              onPressed: () {
+                controller.save();
+              },
               child: const Text("Save"),
             ),
           ),

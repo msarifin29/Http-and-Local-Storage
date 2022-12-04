@@ -1,1 +1,0 @@
-dynamic CURSOR_1;

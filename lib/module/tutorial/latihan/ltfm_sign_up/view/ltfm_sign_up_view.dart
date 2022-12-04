@@ -45,7 +45,9 @@ class LtfmSignUpView extends StatefulWidget {
               ),
               //! 4. Buat sebuah tombol,
               ElevatedButton(
-                onPressed: controller.doLogin(),
+                onPressed: () {
+                  controller.doLogin();
+                },
                 child: const Text("Login"),
               ),
               //gunakan icon: Icons.login

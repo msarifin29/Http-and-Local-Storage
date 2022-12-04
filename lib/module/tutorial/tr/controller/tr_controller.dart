@@ -461,4 +461,30 @@ class TrController extends State<TrView> implements MvcController {
       "view": const LsUserSettingView(),
     },
   ];
+
+  List contextLessMenuItems = [
+    {
+      "label": "Navigation",
+      "view": const TcNavigationView(),
+    },
+    {
+      "label": "Dialog",
+      "view": const TcDialogView(),
+    },
+    {
+      "label": "Bottom Sheeet",
+      "view": const TcBottomSheetView(),
+    },
+    {
+      "label": "Snackbar",
+      "view": const TcSnackbarView(),
+    },
+  ];
+
+  List randomAppItems = [
+    {
+      "label": "Crud Generator",
+      "view": const CgMainNavigationView(),
+    },
+  ];
 }

@@ -16,6 +16,7 @@ class LtsmRotateAnimationView extends StatefulWidget {
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.all(10.0),
+          alignment: Alignment.center,
           child: Column(
             children: [
               // Buat variabel animate di dalam State/Controller
@@ -24,16 +25,14 @@ class LtsmRotateAnimationView extends StatefulWidget {
                 //
                 //jika animate == true, atur derajat rotasinya menjadi 90
                 //jika animate == false, atur opacity menjadi 0
-                turns: controller.animated ? 90 : 0,
-                duration: const Duration(milliseconds: 2000),
+                turns: (controller.animated ? 0 : 90.0) / 360,
+                duration: const Duration(milliseconds: 5000),
                 child: Container(
                   height: 100.0,
                   width: 100.0,
                   margin: const EdgeInsets.only(),
                   decoration: BoxDecoration(
-                    color: controller.animated
-                        ? Colors.red.withOpacity(1.0)
-                        : Colors.red.withOpacity(0),
+                    color: Colors.red.withOpacity(1.0),
                     borderRadius: const BorderRadius.all(
                       Radius.circular(
                         16.0,
@@ -45,7 +44,7 @@ class LtsmRotateAnimationView extends StatefulWidget {
               const SizedBox(
                 height: 20.0,
               ),
-              //TODO:
+              //
               //di dalam event onPressed(),
               //atur animate = true, jika nilai animate adalah false
               //atur animate = false, jika nilai animate adalah true
@@ -55,7 +54,10 @@ class LtsmRotateAnimationView extends StatefulWidget {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blueGrey,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  controller.animated = !controller.animated;
+                  controller.setState(() {});
+                },
               ),
             ],
           ),

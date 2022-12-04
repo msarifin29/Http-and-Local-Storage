@@ -16,6 +16,7 @@ class LtsmVisibilityView extends StatefulWidget {
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.all(10.0),
+          alignment: Alignment.center,
           child: Column(
             children: [
               /*
@@ -48,7 +49,7 @@ class LtsmVisibilityView extends StatefulWidget {
                     controller.visible = !controller.visible;
                     controller.setState(() {});
                   },
-                  child: Text("$controller.visible")),
+                  child: Text("visible : ${controller.visible}")),
             ],
           ),
         ),

@@ -1,5 +1,6 @@
 import 'package:example/config.dart';
 import 'package:example/core.dart';
+import 'package:example/shared/util/random_image/random_image.dart';
 import 'package:faker_dart/faker_dart.dart';
 import 'package:flutter/material.dart';
 
@@ -51,7 +52,7 @@ class HtDashboardController extends State<HtDashboardView>
           },
         ),
         data: {
-          "photo": faker.image.unsplash.food(),
+          "photo": faker.generateRandomImage(),
           "product_name": faker.commerce.productName(),
           "price": faker.commerce.price(
             symbol: "",

@@ -17,32 +17,41 @@ class TfRegisterView extends StatefulWidget {
           padding: const EdgeInsets.all(10.0),
           child: Column(
             children: [
-              QTextField(
-                label: "Email",
-                hint: "Your email",
-                validator: Validator.email,
-                value: "",
-                onChanged: (value) {
-                  controller.email = value;
-                },
-              ),
-              QTextField(
-                label: "Password",
-                hint: "Your password",
-                obscure: true,
-                validator: Validator.required,
-                value: "",
-                onChanged: (value) {
-                  controller.password = value;
-                },
-              ),
-              ElevatedButton.icon(
-                icon: const Icon(Icons.key),
-                label: const Text("Register"),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blueGrey,
+              Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Column(
+                    children: [
+                      QTextField(
+                        label: "Email",
+                        hint: "Your email",
+                        validator: Validator.email,
+                        value: "",
+                        onChanged: (value) {
+                          controller.email = value;
+                        },
+                      ),
+                      QTextField(
+                        label: "Password",
+                        hint: "Your password",
+                        obscure: true,
+                        validator: Validator.required,
+                        value: "",
+                        onChanged: (value) {
+                          controller.password = value;
+                        },
+                      ),
+                      ElevatedButton.icon(
+                        icon: const Icon(Icons.app_registration_rounded),
+                        label: const Text("Register"),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.blueGrey,
+                        ),
+                        onPressed: () => controller.doRegister(),
+                      ),
+                    ],
+                  ),
                 ),
-                onPressed: () => controller.doRegister(),
               ),
             ],
           ),

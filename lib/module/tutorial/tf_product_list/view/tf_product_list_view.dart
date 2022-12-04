@@ -1,25 +1,26 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:example/module/tutorial/tf_product_list/widget/tf_product_item.dart';
 import 'package:flutter/material.dart';
 import 'package:example/core.dart';
-import '../controller/tf_product_list_controller.dart';
 
-// SQL vs NoSQL
-// -----------
-// READ DATA
-// NoSQL WIN
-//--------------
-// WRITE DATA
-// SQL WIN
-// ----------
 class TfProductListView extends StatefulWidget {
   const TfProductListView({Key? key}) : super(key: key);
 
   Widget build(context, TfProductListController controller) {
     controller.view = this;
-
     return Scaffold(
       appBar: AppBar(
         title: const Text("TfProductList"),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.add),
+        onPressed: () async {
+          showLoading();
+          await Future.delayed(const Duration(seconds: 2));
+          hideLoading();
+          showConfirmationDialog();
+          // await Get.to(const TfProductFormView());
+        },
       ),
       body: Container(
         padding: const EdgeInsets.all(10.0),
@@ -28,7 +29,7 @@ class TfProductListView extends StatefulWidget {
             Expanded(
               child: StreamBuilder<QuerySnapshot>(
                 stream: FirebaseFirestore.instance
-                    .collection("messages")
+                    .collection("products")
                     .snapshots(),
                 builder: (context, snapshot) {
                   if (snapshot.hasError) return const Text("Error");
@@ -43,51 +44,11 @@ class TfProductListView extends StatefulWidget {
                       Map<String, dynamic> item =
                           (data.docs[index].data() as Map<String, dynamic>);
                       item["id"] = data.docs[index].id;
-                      return Row(
-                        children: [
-                          Card(
-                            child: Padding(
-                              padding: const EdgeInsets.all(12.0),
-                              child: Text("${item["message"]}"),
-                            ),
-                          ),
-                        ],
-                      );
+                      return TfProductItem(item: item);
                     },
                   );
                 },
               ),
-            ),
-            Row(
-              children: [
-                Expanded(
-                  child: TextField(
-                    onSubmitted: (message) {
-                      FirebaseFirestore.instance.collection("messages").add({
-                        "message": message,
-                      });
-                    },
-                  ),
-                ),
-                ElevatedButton.icon(
-                  icon: const Icon(Icons.send),
-                  label: const Text("Send"),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blueGrey,
-                  ),
-                  onPressed: () async {
-                    // var snapshot = await FirebaseFirestore.instance
-                    //     .collection("messages")
-                    //     .get();
-                    // for (var i = 0; i < snapshot.docs.length; i++) {
-                    //   await FirebaseFirestore.instance
-                    //       .collection("messages")
-                    //       .doc(snapshot.docs[i].id)
-                    //       .delete();
-                    // }
-                  },
-                ),
-              ],
             ),
           ],
         ),

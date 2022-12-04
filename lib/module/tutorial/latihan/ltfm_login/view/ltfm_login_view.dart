@@ -43,8 +43,11 @@ class LtfmLoginView extends StatefulWidget {
               //! 3. Buat sebuah tombol,
               //gunakan icon: Icons.login
               //atur text-nya: Login
-              IconButton(
-                  onPressed: controller.doLogin(),
+              ElevatedButton.icon(
+                  label: const Text("Login"),
+                  onPressed: () {
+                    controller.doLogin();
+                  },
                   icon: const Icon(Icons.login)),
               //ketika di klik, panggil:
               // controller.doLogin()

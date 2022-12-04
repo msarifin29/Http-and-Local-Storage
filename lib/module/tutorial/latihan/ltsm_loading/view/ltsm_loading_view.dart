@@ -16,6 +16,7 @@ class LtsmLoadingView extends StatefulWidget {
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.all(10.0),
+          alignment: Alignment.center,
           child: Column(
             children: [
               /*

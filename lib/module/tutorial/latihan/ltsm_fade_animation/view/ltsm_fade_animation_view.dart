@@ -16,6 +16,7 @@ class LtsmFadeAnimationView extends StatefulWidget {
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.all(10.0),
+          alignment: Alignment.center,
           child: Column(
             children: [
               // Buat variabel animate di dalam State/Controller
@@ -53,6 +54,7 @@ class LtsmFadeAnimationView extends StatefulWidget {
                 ),
                 onPressed: () {
                   controller.animated = !controller.animated;
+                  controller.setState(() {});
                 },
               ),
             ],
